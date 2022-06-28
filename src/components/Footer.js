@@ -5,10 +5,16 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
  class Footer extends Component {
   render() {
     return (
-      <Navbar color="dark" id="footer">
+      <Navbar color="dark">
       <Nav>
         <NavItem>
-          <NavLink>Footer</NavLink>
+          <NavLink>@CopyRight Geovanna and Nic</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink>New</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink>Edit</NavLink>
         </NavItem>
       </Nav>
   </Navbar>

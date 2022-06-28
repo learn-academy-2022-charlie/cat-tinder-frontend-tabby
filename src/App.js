@@ -13,6 +13,8 @@ import {
   Switch
 } from 'react-router-dom'
 import MockCats from './MockCats.js'
+import './App.css'
+
 
  class App extends Component {
   render() {
@@ -31,12 +33,7 @@ import MockCats from './MockCats.js'
       <Footer/>
       </Router>
       
-      {/* <CatEdit/>
-      <CatIndex/>
-      <CatNew/>
-      <CatShow/>
-      <Home/>
-      <NotFound/> */}
+  
       
       </>
     )

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
- class Footer extends Component {
+class CatNew extends Component {
   render() {
     return (
-      <div>Footer</div>
+      <div>CatNew</div>
     )
   }
 }
-export default Footer
+export default CatNew

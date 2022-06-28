@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
- class Footer extends Component {
+class Home extends Component {
   render() {
     return (
-      <div>Footer</div>
+      <div>Home</div>
     )
   }
 }
-export default Footer
+export default Home

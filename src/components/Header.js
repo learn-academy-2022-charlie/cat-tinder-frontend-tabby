@@ -9,6 +9,12 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
           <NavItem>
             <NavLink>Home</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink>New</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink>Edit</NavLink>
+          </NavItem>
         </Nav>
     </Navbar>
   

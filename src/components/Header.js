@@ -4,8 +4,8 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
  class Header extends Component {
   render() {
     return (
-      <Navbar color="dark">
-        <Nav>
+     
+        <Nav className="header-nav">
           <NavItem>
             <NavLink>Home</NavLink>
           </NavItem>
@@ -16,7 +16,7 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
             <NavLink>Edit</NavLink>
           </NavItem>
         </Nav>
-    </Navbar>
+     
   
     )
   }

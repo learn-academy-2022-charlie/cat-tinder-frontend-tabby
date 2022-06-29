@@ -15,9 +15,10 @@ class CatIndex extends Component {
       <>
         <h3>Meet the Pets!</h3>
         {cats && cats.map((value, index) => {
-          return <Card style={{ width: '18rem' }}>
-            <CardImg variant="top" src={value.image} />
-            <CardBody key={index}>
+          return (
+          <Card key={index} style={{ width: '18rem' }}>
+          <CardImg variant="top" src={value.image} />
+            <CardBody>
 
               <CardTitle>{value.name}</CardTitle>
               <CardSubtitle>{value.age}</CardSubtitle>
@@ -27,7 +28,7 @@ class CatIndex extends Component {
               
             </CardBody>
           </Card>
-        
+          )
         })}
       
       </>

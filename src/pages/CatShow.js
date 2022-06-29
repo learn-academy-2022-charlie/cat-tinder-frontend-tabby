@@ -9,7 +9,7 @@ import {
   CardText } from 'reactstrap'
   import { NavLink } from 'react-router-dom'
 
-class cathow extends Component {
+class CatShow extends Component {
   render() {
      const { cat } = this.props
     return (
@@ -35,4 +35,4 @@ class cathow extends Component {
     )
   }
 }
-export default cathow
+export default CatShow

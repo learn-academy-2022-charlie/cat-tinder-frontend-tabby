@@ -14,7 +14,7 @@ Enzyme.configure({adapter: new Adapter()})
 
 describe('When CatShow is rendered', () => {
   const props = {
-    cats: [
+    cat: [
       {
         id: 1,
         name: "Mittens",

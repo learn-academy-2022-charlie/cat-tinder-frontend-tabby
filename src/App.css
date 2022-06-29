@@ -3,18 +3,46 @@
   padding: 0;
 }
 
-#footer {
-  background-color: #FFFEF1;
+.footer {
+  background-color: #ff5B64;
   bottom: 0;
   display: flex;
   justify-content: space-around;
   margin-bottom: 0px;
   position: fixed;
   width: 100%;
+  
 }
 
 .body{
   text-align: center;
-  
+  margin-top: 150px;
+  background-image: linear-gradient(rgb(180, 110, 110), rgb(145, 51, 115));
+ 
+}
+
+
+  .header-nav{
+    background-color: #ff5B64;
+    justify-content: space-between;
+  }
+
+  .resize {
+    width: 400px;
+    height: auto;
+}
+
+  h3{
+    text-align: center;
+  }
+
+
+.lost-pup{
+  width: 400px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 

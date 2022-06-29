@@ -5,7 +5,8 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
  class Footer extends Component {
   render() {
     return (
-      <Navbar color="dark">
+      <nav className = "footer">
+      <Navbar>
       <Nav>
         <NavItem>
           <NavLink>@CopyRight Geovanna and Nic</NavLink>
@@ -18,6 +19,7 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
         </NavItem>
       </Nav>
   </Navbar>
+  </nav>
     )
   }
 }

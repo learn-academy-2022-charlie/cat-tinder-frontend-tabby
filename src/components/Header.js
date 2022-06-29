@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
+import { Nav, NavItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom'
 
  class Header extends Component {
   render() {
@@ -7,13 +8,13 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
      
         <Nav className="header-nav">
           <NavItem>
-            <NavLink>Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>New</NavLink>
+            <NavLink to="/catindex">See All Pets</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>Edit</NavLink>
+            <NavLink to="/catnew">Add a Pet</NavLink>
           </NavItem>
         </Nav>
      

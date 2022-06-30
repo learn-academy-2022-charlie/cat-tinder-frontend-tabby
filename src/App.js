@@ -23,6 +23,9 @@ import './App.css'
       cats : MockCats
     }
   }
+  createPet = (pet) => {
+    console.log(pet)
+  }
   render() {
     return (
       <>
@@ -36,7 +39,10 @@ import './App.css'
           let cat = this.state.cats.find(cat => cat.id === +id)
           return <CatShow cat={cat} />
         }} />
-        <Route path="/catnew" component={CatNew} />
+        <Route
+  path="/catnew"
+  render={(props) => <CatNew createPet={this.createPet} />}
+/>
         <Route path="/catedit" component={CatEdit} />
         <Route component={NotFound}/>
       </Switch>

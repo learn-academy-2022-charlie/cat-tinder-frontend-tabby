@@ -9,13 +9,7 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
       <Navbar>
       <Nav>
         <NavItem>
-          <NavLink>@CopyRight Geovanna and Nic</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink>New</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink>Edit</NavLink>
+          <NavLink id="copyright">@CopyRight Geovanna and Nic</NavLink>
         </NavItem>
       </Nav>
   </Navbar>

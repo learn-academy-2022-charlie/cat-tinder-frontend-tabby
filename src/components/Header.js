@@ -8,13 +8,13 @@ import { NavLink } from 'react-router-dom'
      
         <Nav className="header-nav">
           <NavItem>
-            <NavLink to="/">Home</NavLink>
+            <NavLink id="link" to="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/catindex">See All Pets</NavLink>
+            <NavLink id="link" to="/catindex">See All Pets</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/catnew">Add a Pet</NavLink>
+            <NavLink id="link" to="/catnew">Add a Pet</NavLink>
           </NavItem>
         </Nav>
      

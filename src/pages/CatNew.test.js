@@ -37,4 +37,25 @@ describe('When CatNew is rendered', () => {
         const headerRender = catNewRender.find('h3')
         expect(headerRender.length).toEqual(1)
 })
+
+
+  it('displays an input for pet name', ()=> {
+    const catNewNameInput = catNewRender.find('[name="name"]')
+    expect(catNewNameInput.length).toEqual(1)
+})
+
+it('displays an input for pet age', ()=> {
+  const catNewAgeInput = catNewRender.find('[name="age"]')
+  expect(catNewAgeInput.length).toEqual(1)
+})
+it('displays an input for pet enjoys', ()=> {
+  const catNewEnjoysInput = catNewRender.find('[name="enjoys"]')
+  expect(catNewEnjoysInput.length).toEqual(1)
+})
+
+it('displays an input for pet image', ()=> {
+  const catNewImageInput = catNewRender.find('[name="image"]')
+  expect(catNewImageInput.length).toEqual(1)
+})
+
 })

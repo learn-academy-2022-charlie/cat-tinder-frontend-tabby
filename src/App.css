@@ -3,39 +3,82 @@
   padding: 0;
 }
 
-.footer {
-  background-color: #ff5B64;
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 0px;
-  position: fixed;
-  width: 100%;
-  
-}
 
 .body{
   text-align: center;
   margin-top: 150px;
-  background-image: linear-gradient(rgb(180, 110, 110), rgb(145, 51, 115));
- 
+  border-radius: auto;
 }
 
 
-  .header-nav{
-    background-color: #ff5B64;
-    justify-content: space-between;
-  }
-
-  .resize {
-    width: 400px;
-    height: auto;
+.header-nav{
+  background: linear-gradient(#dd4242, #eb8dde);
+  justify-content: space-between;
+  font-family: cursive;
+  font-size: larger;
 }
 
-  h3{
-    text-align: center;
-  }
+#link{
+  color: rgb(29, 46, 68);
+  font-size: larger;
+}
+#link:hover{
+  color: white;
+}
 
+.home-header{
+  text-align: center;
+  margin-top: 1cm;
+  background: linear-gradient(#dd4242, #eb8dde);
+  color:rgb(29, 46, 68);
+  font-family: cursive;
+}
+
+#left
+{
+  position:absolute;
+  width: 100px;
+  top:15;
+  left: 0;
+}
+
+#right
+{
+  position:absolute;
+  width: 100px;    
+  top: 15;
+  right: 0;
+}
+h3{
+  text-align: center;
+  font-family: cursive;
+  background-color: #efe3e3;
+  padding-top: 0.5cm;
+}
+
+
+p {
+  text-align:center;
+  font-family: fantasy;
+  font-size: larger;
+  
+  
+}
+
+.index-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+.form{
+  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: large;
+  margin-left: 20%;
+  margin-right: 20%;
+}
 
 .lost-pup{
   width: 400px;
@@ -43,6 +86,27 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-
+  
+}
+.resize {
+  width: 400px;
+  height: auto;
 }
 
+
+
+.footer {
+  background:linear-gradient(#dd4242, #eb8dde);
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#copyright{
+  color: rgb(29, 46, 68);
+  font-size: large;
+}

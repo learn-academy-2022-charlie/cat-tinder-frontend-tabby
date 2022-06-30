@@ -6,13 +6,12 @@ import {
   Label,
   Button
 } from 'reactstrap'
-// react-router import
 import { Redirect } from 'react-router-dom'
 
 
 
 class CatNew extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       newCat: {
@@ -26,69 +25,68 @@ class CatNew extends Component {
   }
 
   handleChange = (e) => {
-  // destructuring form out of state
-  let { newCat } = this.state
-  newCat[e.target.name] = e.target.value
-  // setting state to the updated form content
-  this.setState({newCat: newCat})
-}
+
+    let { newCat } = this.state
+    newCat[e.target.name] = e.target.value
+    this.setState({ newCat: newCat })
+  }
   handleSubmit = () => {
     this.props.createPet(this.state.newCat)
-    this.setState({submitted: true})
+    this.setState({ submitted: true })
   }
   render() {
     return (
-      <> 
-      <h3>Create a New Pet Profile</h3> 
-      <Form className='form'>
-  <FormGroup>
-    <Label for="name">Name</Label>
-    <Input
-      type="text"
-      name="name"
-      onChange={this.handleChange}
-    value={this.state.newCat.name}
-    // currently making the form function
-    />
-  </FormGroup>
-  <FormGroup>
-    <Label for="age">Age</Label>
-    <Input
-      type="text"
-      name="age"
-      onChange={this.handleChange}
-    value={this.state.newCat.age}
-    />
-  </FormGroup>
-  <FormGroup>
-    <Label for="enjoys">Enjoys</Label>
-    <Input
-      type="text"
-      name="enjoys"
-      onChange={this.handleChange}
-    value={this.state.newCat.enjoys}
-    />
-  </FormGroup>
+      <>
+        <h3>Create a New Pet Profile</h3>
+        <Form className='form'>
+          <FormGroup>
+            <Label for="name">Name</Label>
+            <Input
+              type="text"
+              name="name"
+              onChange={this.handleChange}
+              value={this.state.newCat.name}
 
-  <FormGroup>
-    <Label for="image">Image</Label>
-    <Input
-      type="text"
-      name="image"
-      onChange={this.handleChange}
-    value={this.state.newCat.image}
-    />
-  </FormGroup>
-  <Button
-  name="submit"
-  onClick={this.handleSubmit}
->
-  Create a New Profile
-</Button>
-{this.state.submitted && <Redirect to="/catindex" />}
-</Form>
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="age">Age</Label>
+            <Input
+              type="text"
+              name="age"
+              onChange={this.handleChange}
+              value={this.state.newCat.age}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="enjoys">Enjoys</Label>
+            <Input
+              type="text"
+              name="enjoys"
+              onChange={this.handleChange}
+              value={this.state.newCat.enjoys}
+            />
+          </FormGroup>
 
-</>
+          <FormGroup>
+            <Label for="image">Image</Label>
+            <Input
+              type="text"
+              name="image"
+              onChange={this.handleChange}
+              value={this.state.newCat.image}
+            />
+          </FormGroup>
+          <Button
+            name="submit"
+            onClick={this.handleSubmit}
+          >
+            Create a New Profile
+          </Button>
+          {this.state.submitted && <Redirect to="/catindex" />}
+        </Form>
+
+      </>
     )
   }
 }

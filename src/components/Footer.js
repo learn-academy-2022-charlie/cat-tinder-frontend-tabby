@@ -11,12 +11,6 @@ import { Navbar, Nav, NavLink, NavItem } from 'reactstrap';
         <NavItem>
           <NavLink id="copyright">@CopyRight Geovanna and Nic</NavLink>
         </NavItem>
-        {/* <NavItem>
-          <NavLink>New</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink>Edit</NavLink>
-        </NavItem> */}
       </Nav>
   </Navbar>
   </nav>

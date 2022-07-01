@@ -16,41 +16,50 @@ import MockCats from './MockCats.js'
 import './App.css'
 
 
- class App extends Component {
-  constructor(props){
+class App extends Component {
+  constructor(props) {
     super(props)
-    this.state={
-      cats : MockCats
+    this.state = {
+      cats: MockCats
     }
   }
   createPet = (pet) => {
     console.log(pet)
   }
+  updateCat = (cat, id) => {
+    console.log("cat:", cat)
+    console.log("id:", id)
+  }
+
   render() {
     return (
       <>
-      <Router>
-      <Header/>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/catindex" render={(props)=><CatIndex cats={this.state.cats}/>}/>
-        <Route path="/catshow/:id" render={(props) => {
-          let id = props.match.params.id
-          let cat = this.state.cats.find(cat => cat.id === +id)
-          return <CatShow cat={cat} />
-        }} />
-        <Route
-  path="/catnew"
-  render={(props) => <CatNew createPet={this.createPet} />}
-/>
-        <Route path="/catedit" component={CatEdit} />
-        <Route component={NotFound}/>
-      </Switch>
-      <Footer/>
-      </Router>
-      
-  
-      
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/catindex" render={(props) => <CatIndex cats={this.state.cats} />} />
+            <Route path="/catshow/:id" render={(props) => {
+              let id = props.match.params.id
+              let cat = this.state.cats.find(cat => cat.id === +id)
+              return <CatShow cat={cat} />
+            }} />
+            <Route
+              path="/catnew"
+              render={(props) => <CatNew createPet={this.createPet} />}
+            />
+            <Route path="/catedit/:id" render={(props) => {
+              let id = props.match.params.id
+              let cat = this.state.cats.find(cat => cat.id === +id)
+              return <CatEdit updateCat={this.updateCat} cat={cat} />
+            }} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </Router>
+
+
+
       </>
     )
   }

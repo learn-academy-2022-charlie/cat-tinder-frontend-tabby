@@ -12,7 +12,6 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import MockCats from './MockCats.js'
 import './App.css'
 
 
@@ -20,16 +19,59 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cats: MockCats
+      cats: []
     }
   }
-  createPet = (pet) => {
-    console.log(pet)
+  componentDidMount() {
+    this.readPet()
+
   }
-  updateCat = (cat, id) => {
-    console.log("cat:", cat)
-    console.log("id:", id)
+  createPet = (newPet) => {
+    fetch("http://localhost:3000/pets", {
+      body: JSON.stringify(newPet),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then(response => response.json())
+      .then(payload => this.readPet())
+      .catch(errors => console.log("Pet create errors:", errors))
+
   }
+
+  readPet = () => {
+    fetch("http://localhost:3000/pets")
+      .then(response => response.json())
+      .then(payload => this.setState({ cats: payload }))
+      .catch(errors => console.log("Pet read errors:", errors))
+  }
+  updatePet = (pet, id) => {
+    fetch(`http://localhost:3000/pets/${id}`, {
+      body: JSON.stringify(pet),
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      method: "PATCH"
+    })
+      .then(response => response.json())
+      .then(payload => this.readPet())
+      .catch(errors => console.log("Pet update errors:", errors))
+  }
+
+  deletePet = (id) => {
+    fetch(`http://localhost:3000/pets/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then(response => response.json())
+      .then(payload => this.readPet())
+      .catch(errors => console.log("Pet delete errors:", errors))
+  }
+
 
   render() {
     return (
@@ -42,8 +84,9 @@ class App extends Component {
             <Route path="/catshow/:id" render={(props) => {
               let id = props.match.params.id
               let cat = this.state.cats.find(cat => cat.id === +id)
-              return <CatShow cat={cat} />
+              return <CatShow cat={cat} deletePet={this.deletePet} />
             }} />
+
             <Route
               path="/catnew"
               render={(props) => <CatNew createPet={this.createPet} />}
@@ -51,7 +94,7 @@ class App extends Component {
             <Route path="/catedit/:id" render={(props) => {
               let id = props.match.params.id
               let cat = this.state.cats.find(cat => cat.id === +id)
-              return <CatEdit updateCat={this.updateCat} cat={cat} />
+              return <CatEdit updatePet={this.updatePet} cat={cat} />
             }} />
             <Route component={NotFound} />
           </Switch>

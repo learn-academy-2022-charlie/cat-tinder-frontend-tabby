@@ -14,10 +14,10 @@ class CatEdit extends Component {
     super(props)
     this.state = {
       newCat: {
-        name: "",
-        age: "",
-        enjoys: "",
-        image: ""
+        name: this.props.cat ? this.props.cat.name : "",
+        age: this.props.cat ? this.props.cat.age : "",
+        enjoys: this.props.cat ? this.props.cat.enjoys : "",
+        image: this.props.cat ? this.props.cat.image : ""
       },
       submitted: false
     }
@@ -30,7 +30,7 @@ class CatEdit extends Component {
     this.setState({ newCat: newCat })
   }
   handleSubmit = () => {
-    this.props.updateCat(this.state.newCat, this.props.cat.id)
+    this.props.updatePet(this.state.newCat, this.props.cat.id)
     this.setState({ submitted: true })
   }
 
@@ -83,7 +83,7 @@ class CatEdit extends Component {
             name="submit"
             onClick={this.handleSubmit}
           >
-            Create a New Profile
+            Update this Profile
           </Button>
 
           {this.state.submitted && <Redirect to="/catindex" />}

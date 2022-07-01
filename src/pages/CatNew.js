@@ -78,6 +78,7 @@ class CatNew extends Component {
             />
           </FormGroup>
           <Button
+            style={{ backgroundColor: "black", color: "white" }}
             name="submit"
             onClick={this.handleSubmit}
           >
